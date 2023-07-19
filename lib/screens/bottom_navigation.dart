@@ -56,11 +56,19 @@ class _BottomNavigationState extends State<BottomNavigation> {
     return Scaffold(
       appBar: doItAppBar(context, "Do It", showAction: isSelected == 1 ? false : true, showCreateProject: isSelected == 2 ? true : false, showBack: isSelected == 1 ? false : true,),
         body: fragments[isSelected - 1],
+      floatingActionButton:  FloatingActionButton(
+        backgroundColor: appColorPrimary,
+        onPressed: () {
+          nextScreen(context, const CreateProject());
+        },
+        child: const Icon(Icons.add, color: appWhite),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       bottomNavigationBar: Stack(
         alignment: Alignment.topCenter,
         children: <Widget>[
           Container(
-            margin: const EdgeInsets.only(top: 45),
+            // margin: const EdgeInsets.only(top: 10),
             height: 60,
             decoration: const BoxDecoration(
               color: bottomBarColor,
@@ -80,13 +88,16 @@ class _BottomNavigationState extends State<BottomNavigation> {
               ),
             ),
           ),
-          FloatingActionButton(
-            backgroundColor: appColorPrimary,
-            onPressed: () {
-              nextScreen(context, const CreateProject());
-            },
-            child: const Icon(Icons.add, color: appWhite),
-          )
+          // Positioned(
+          //   top: 0,
+          //   child: FloatingActionButton(
+          //     backgroundColor: appColorPrimary,
+          //     onPressed: () {
+          //       nextScreen(context, const CreateProject());
+          //     },
+          //     child: const Icon(Icons.add, color: appWhite),
+          //   ),
+          // )
         ],
       ),
     );

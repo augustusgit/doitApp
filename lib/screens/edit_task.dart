@@ -63,7 +63,6 @@ class _EditTaskState extends State<EditTask> {
     return Scaffold(
       appBar: doItAppBar(context, "Do It", showAction: true, showBack: true, showPopMenu: true),
       bottomNavigationBar: Container(
-        margin: const EdgeInsets.only(top: 45),
         height: 60,
         decoration: const BoxDecoration(
           color: bottomBarColor,

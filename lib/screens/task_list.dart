@@ -55,7 +55,6 @@ class _TaskListState extends State<TaskList> {
     return Scaffold(
       appBar: doItAppBar(context, "Do It", showAction: false, showBack: true),
       bottomNavigationBar: Container(
-        margin: const EdgeInsets.only(top: 45),
         height: 60,
         decoration: const BoxDecoration(
           color: bottomBarColor,

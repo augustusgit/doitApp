@@ -37,7 +37,6 @@ AppBar doItAppBar(
       onTap: () {
         if (Navigator.of(context).canPop()) {
           Navigator.pop(context, true);
-          onClose!();
         } else {
           nextScreenReplace(context, const DashboardScreen());
         }
