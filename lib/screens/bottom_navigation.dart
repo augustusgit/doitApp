@@ -88,16 +88,6 @@ class _BottomNavigationState extends State<BottomNavigation> {
               ),
             ),
           ),
-          // Positioned(
-          //   top: 0,
-          //   child: FloatingActionButton(
-          //     backgroundColor: appColorPrimary,
-          //     onPressed: () {
-          //       nextScreen(context, const CreateProject());
-          //     },
-          //     child: const Icon(Icons.add, color: appWhite),
-          //   ),
-          // )
         ],
       ),
     );
