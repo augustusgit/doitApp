@@ -27,7 +27,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-        appBar: doItAppBar(context, "Create Account", showLogo: false,),
+        appBar: doItAppBar(context, "Create Account", showAction: false,),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Padding(

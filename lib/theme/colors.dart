@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 // Light Theme Colors
 const appColorPrimary = Color(0xFF0184D6);
 const appColorPrimaryDark = Color(0xFF1E1E1E);
-const appColorAccent = Color(0xFF253085);
+const appColorAccent = Color(0xFF217AC0);
 const appTextColorPrimary = Color(0xFF121826);
+const scaffoldColor = Color(0xFFEFEFEF);
+const doItPurple = Color(0xFF58028C);
 const iconColorPrimary = Color(0xFFFFFFFF);
 const appTextColorSecondary = Color(0xFF5A5C5E);
 const iconColorSecondary = Color(0xFFD2D2D2);
@@ -37,7 +39,8 @@ const appColorPrimaryLight = Color(0xFFF9FAFF);
 const appSecondaryBackgroundColor = Color(0xFF131d25);
 const appDividerColor = Color(0xFFDADADA);
 const inputBackgroundColor = Color(0xFFEFF2F5);
-const inputBorderColor = Color(0xFFB1BBC6);
+const inputBorderColor = Color(0xFFB1B0B0);
+const bottomBarColor = Color(0xFFE9EBEE);
 
 // Dark Theme Colors
 const appBackgroundColorDark = Color(0xFF131d25);
@@ -45,7 +48,8 @@ const cardBackgroundBlackDark = Color(0xFF1D2939);
 const color_primary_black = Color(0xFF131d25);
 const appColorPrimaryDarkLight = Color(0xFFF9FAFF);
 const iconColorPrimaryDark = Color(0xFF212121);
-const iconColorSecondaryDark = Color(0xFFA8ABAD);
+const iconColorSecondaryDark = Color(0xFF747575);
+
 const appShadowColorDark = Color(0x1A3E3942);
 
 TextStyle kmediumText(Color colors) => TextStyle(

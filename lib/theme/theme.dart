@@ -11,14 +11,14 @@ class AppThemeData {
   AppThemeData._();
 
   static final ThemeData lightTheme = ThemeData(
-    scaffoldBackgroundColor: const Color(0xFFEFEFEF),
+    scaffoldBackgroundColor: scaffoldColor,
     primaryColor: const Color(0xFF100C57),
     primaryColorDark: const Color(0xFF1E1E1E),
     highlightColor: appTextColorSecondary,
     errorColor: Colors.red,
     hoverColor: Colors.white54,
     dividerColor: viewLineColor,
-    cardColor: appColorAccent,
+    cardColor: scaffoldColor,
     fontFamily: GoogleFonts.nunito().fontFamily,
     appBarTheme: const AppBarTheme(
       color: appLayout_background,

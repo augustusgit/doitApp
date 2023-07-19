@@ -1,4 +1,5 @@
-import 'package:doit/screens/landing_page.dart';
+import 'package:doit/screens/create_project.dart';
+import 'package:doit/screens/dashboard.dart';
 import 'package:doit/util/widgets/text_field/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,7 +20,9 @@ AppBar doItAppBar(
       Color? iconColor,
       Color? textColor,
       VoidCallback? onClose,
-      bool showLogo = true,
+      bool showAction = true,
+      bool showCreateProject = false,
+      bool showPopMenu = false,
     }) {
   final screenWidth = MediaQuery.of(context).size.width;
   final screenHeight = MediaQuery.of(context).size.height;
@@ -36,16 +39,13 @@ AppBar doItAppBar(
           Navigator.pop(context, true);
           onClose!();
         } else {
-          nextScreenReplace(context, const LandingPage());
+          nextScreenReplace(context, const DashboardScreen());
         }
       },
       child: Padding(
         padding: EdgeInsets.only(
             left: screenWidth * 0.057, right: screenWidth * 0.07),
-        // child: Image.asset(
-        //   "assets/icon/back.png",
-        //   // height: screenHeight * .08,
-        // ),
+
         child: IconButton(
           onPressed: () {
             finish(context);
@@ -58,14 +58,91 @@ AppBar doItAppBar(
       ),
     )
         : null,
-    actions: !showLogo
+    actions: !showAction
         ? null
         : [
-      Padding(
+          if(showCreateProject)
+      ...[Padding(
         padding: EdgeInsets.only(
             bottom: screenHeight * .00, right: screenWidth * .08),
-        child: doItLogo(context),
-      )
+        child: GestureDetector(
+          onTap: (){nextScreen(context, const CreateProject());},
+          child: Container(
+            width: screenWidth * 0.3,
+              height: screenHeight * 0.04,
+              decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                  // borderRadius: BorderRadius.circular(8.0),
+                border: Border.all(color: appColorPrimary,),
+              ),
+              child: Center(
+                child: Text(
+                  "Create Project",
+                  style: GoogleFonts.poppins(
+                    fontSize: screenHeight * .015,
+                    color: appColorPrimary,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+          ),
+        ),
+      ),],
+
+      if(showPopMenu)
+        ...[
+          PopupMenuButton(onSelected: (value) {
+            // your logic
+            // setState(() {
+            //   selectedItem = value.toString();
+            // });
+            print(value);
+            Navigator.pushNamed(context, value.toString());
+          }, itemBuilder: (BuildContext bc) {
+            return const [
+              PopupMenuItem(
+                value: '10',
+                child: Text("10%"),
+              ),
+              PopupMenuItem(
+                value: '20',
+                child: Text("20%"),
+              ),
+              PopupMenuItem(
+                value: '30',
+                child: Text("30%"),
+              ),
+              PopupMenuItem(
+                value: '40',
+                child: Text("40%"),
+              ),
+              PopupMenuItem(
+                value: '50',
+                child: Text("50%"),
+              ),
+              PopupMenuItem(
+                value: '60',
+                child: Text("60%"),
+              ),
+              PopupMenuItem(
+                value: '70',
+                child: Text("70%"),
+              ),
+              PopupMenuItem(
+                value: '80',
+                child: Text("80%"),
+              ),
+              PopupMenuItem(
+                value: '90',
+                child: Text("90%"),
+              ),
+              PopupMenuItem(
+                value: '100',
+                child: Text("100%"),
+              ),
+            ];
+          })
+        ],
     ],
     iconTheme: const IconThemeData(color: appColorPrimary),
   );

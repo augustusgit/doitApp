@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../theme/colors.dart';
 import '../util/next_screen.dart';
 import '../util/widgets/doitwidgets.dart';
-import 'dashboard.dart';
+import 'bottom_navigation.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);
@@ -23,7 +23,7 @@ class _SignInScreenState extends State<SignInScreen> {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: doItAppBar(context, "Do It", showLogo: false,),
+      appBar: doItAppBar(context, "Do It", showAction: false,),
         body: SingleChildScrollView(
             child: Padding(
               padding: EdgeInsets.only(
@@ -86,7 +86,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      doItSignInSubmitButton(context, () => nextScreen(context, const DashboardScreen()), "Create account" ),
+                      doItSignInSubmitButton(context, () => nextScreen(context, const BottomNavigation()), "Create account" ),
                       Stack(
                         children: [
                           Image.asset(

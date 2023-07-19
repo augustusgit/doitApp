@@ -14,7 +14,7 @@ class LandingPage extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: doItAppBar(context, "Do It", showLogo: false, showBack: false),
+      appBar: doItAppBar(context, "Do It", showAction: false, showBack: false),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
