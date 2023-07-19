@@ -1,6 +1,6 @@
 # doit
 
-A test app from liberty
+A Responsive UI app from liberty
 
 ## Getting Started
 
